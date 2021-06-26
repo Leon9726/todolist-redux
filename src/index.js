@@ -3,11 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createStore } from 'redux';
+import storeReducer from './reducers/index'
+import {Provider} from 'react-redux'
+
+let storeTodos = { 
+  todos: [
+    {id: 0, todo:"Fare la spesa", completed: true},
+    {id: 1, todo:"Fare i compiti", completed: false},
+    {id: 2, todo:"Uscire il cane", completed: false}
+  ]
+};
+
+const store = createStore(storeReducer, {todos: [...storeTodos.todos]});
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
