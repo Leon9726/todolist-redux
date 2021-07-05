@@ -1,19 +1,7 @@
-import { connect } from "react-redux";
-import addNewConponent from "../components/addtodo"
-import { addTodo } from "../action/index";
+import {connect } from 'react-redux';
 
-/*
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addNew: (todo) => {
-            dispatch(addTodo(todo))
-        }
-    }
-}*/
+import addTodoComponent from '../components/addtodo';
+import { addTodo } from '../actions/index';
 
 
-//export default connect(null, mapDispatchToProps)(addNewConponent);
-const methods = {
-    addNew: addTodo
-}
-export default connect(null, methods)(addNewConponent);
+export default connect(null, {addTodo} )(addTodoComponent);
