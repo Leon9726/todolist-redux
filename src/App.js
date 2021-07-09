@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Header from './components/header'
 import MyToDoList from './containers/mytodolist';
 import AddNewTodo from './containers/addnew'
+import TodoFooterContainers from './containers/todoFooterContainers';
 
 class App extends Component {
 
@@ -14,6 +15,7 @@ class App extends Component {
         <div className="container">
           <AddNewTodo />
           <MyToDoList />
+          <TodoFooterContainers />
         </div>
       </div>
     );
